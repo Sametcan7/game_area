@@ -34,7 +34,7 @@ function SignUp() {
   return (
     <div className="h-screen bg-zinc-700">
       <div className="flex h-full items-center justify-center">
-        <div className="w-full max-w-2xl rounded-lg border-2 border-zinc-500 bg-zinc-800 shadow-lg shadow-zinc-800 lg:w-4/5">
+        <div className="w-full max-w-md rounded-lg border-2 border-zinc-500 bg-zinc-800 shadow-lg shadow-zinc-800 lg:w-4/5">
           <h2 className="mt-1 text-center text-2xl font-bold text-zinc-300 lg:mt-6 lg:text-4xl">
             SIGN UP
           </h2>
