@@ -3,7 +3,11 @@ import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { EventContext, SessionContext } from "../App";
 import { supabase } from "../supabase/api";
-import { IoCloseSharp, IoGameControllerOutline } from "react-icons/io5";
+import {
+  IoCloseCircleSharp,
+  IoCloseSharp,
+  IoGameControllerOutline,
+} from "react-icons/io5";
 import { BiLogOut } from "react-icons/bi";
 import { IconContext } from "react-icons";
 import { FaSearch } from "react-icons/fa";
@@ -49,9 +53,14 @@ function Header() {
             <>
               <div
                 ref={menuRef}
-                className={`${show ? "fixed" : "max-lg:hidden"} left-1/2 top-1/2 flex items-center justify-center gap-1 rounded-lg max-lg:h-1/2 max-lg:w-1/2 max-lg:max-w-80 max-lg:translate-x-[-50%] max-lg:translate-y-[-50%] max-lg:border-2 max-lg:border-zinc-600 max-lg:bg-zinc-800 max-lg:text-lg max-sm:flex-col lg:gap-2`}>
+                className={`${show ? "fixed" : "max-lg:hidden"} left-1/2 top-1/2 flex items-center justify-center gap-1 rounded-lg max-lg:h-3/5 max-lg:w-4/5 max-lg:translate-x-[-50%] max-lg:translate-y-[-50%] max-lg:border-2 max-lg:border-zinc-600 max-lg:bg-zinc-800 max-lg:text-lg lg:gap-2`}>
                 <Login setShow={setShow} />
                 <Sign setShow={setShow} />
+                <button className="lg:hidden" onClick={() => setShow(false)}>
+                  <IconContext.Provider value={{ size: "40px" }}>
+                    <IoCloseCircleSharp className="absolute right-5 top-5 text-zinc-400" />
+                  </IconContext.Provider>
+                </button>
               </div>
               <div className="lg:hidden">
                 <FaBars
